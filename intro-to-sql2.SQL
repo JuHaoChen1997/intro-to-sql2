@@ -84,5 +84,8 @@ SELECT DISTINCT building_name, capacity FROM employees JOIN buildings;
 -- 28.List all buildings and the distinct employee roles in each building (including empty buildings)
 SELECT DISTINCT role ,building_name FROM buildings LEFT JOIN employees ON building_name = employees.building;
 
+-- 29.Find the name and role of all employees who have not been assigned to a building
+SELECT name, role FROM employees WHERE building IS NULL;
 
-
+-- 30. Find the names of the buildings that hold no employees
+SELECT * FROM buildings LEFT JOIN employees ON building_name = building WHERE name IS NULL ;
